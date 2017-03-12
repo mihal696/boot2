@@ -39,4 +39,7 @@
 	<bean id="personDAO" class="it.coderunner.dao.impl.PersonDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+		<bean id="invoiceDAO" class="it.coderunner.dao.impl.InvoiceDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
 </beans>
