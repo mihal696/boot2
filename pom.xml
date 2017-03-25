@@ -7,5 +7,6 @@
   <packaging>pom</packaging>
   <modules>
     <module>hibernate4</module>
+    <module>spring-data</module>
   </modules>
 </project>
