@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class City implements Serializable {
 
-	private static final long serialVersionUID = -7901094204949006824L;
+	private static final long serialVersionUID = 5034408425716562074L;
 
 	@Id
 	@GeneratedValue

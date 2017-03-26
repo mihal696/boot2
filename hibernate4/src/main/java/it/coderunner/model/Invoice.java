@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +21,17 @@ public class Invoice {
 	private String invoiceNumber;
 	private String provider;
 	private int sum;
+	@ManyToOne
+	@JoinColumn(name = "id")
+	private Person person;
+
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+	}
 
 	public int getSum() {
 		return sum;
@@ -55,6 +68,6 @@ public class Invoice {
 	@Override
 	public String toString() {
 		return "invoice_id=" + invoiceId + ", invoice_number=" + invoiceNumber + ", provider=" + provider + " , sum="
-				+ sum;
+				+ sum; //+ ", person_id=" + //person;
 	}
 }
