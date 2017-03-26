@@ -49,8 +49,8 @@ public class AddressServiceImpl implements AddressService {
 	}
 
 	@Override
-	public List<Address> findByStreetNotLike(String street) {
-		return addressRepository.findByStreetNotLike(street);
+	public List<Address> findByStreetContaining(String street) {
+		return addressRepository.findByStreetContaining(street);
 	}
 
 }

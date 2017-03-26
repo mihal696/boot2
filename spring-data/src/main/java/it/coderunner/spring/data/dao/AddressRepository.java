@@ -23,7 +23,7 @@ public interface AddressRepository extends CrudRepository<Address, Long>{
 	
 	List<Address> findByStreetStartingWith(String street);
 	
-	List<Address> findByStreetNotLike(String street);
+	List<Address> findByStreetContaining(String street);
 	
 	@SuppressWarnings("unchecked")
 	Address save(Address address);

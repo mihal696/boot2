@@ -66,9 +66,9 @@ public class AddressController {
 				: new ResponseEntity<String>("No street found", HttpStatus.NOT_FOUND);
 	}
 
-	@GetMapping("/get/streetnotlike/{street}")
-	public @ResponseBody ResponseEntity<String> getByStreetNotLike(@PathVariable String street) {
-		List<Address> address = addressService.findByStreetNotLike(street);
+	@GetMapping("/get/streetcontaining/{street}")
+	public @ResponseBody ResponseEntity<String> getByStreetContaining(@PathVariable String street) {
+		List<Address> address = addressService.findByStreetContaining(street);
 		return address != null ? new ResponseEntity<String>("GET Response : " + address, HttpStatus.OK)
 				: new ResponseEntity<String>("No street found", HttpStatus.NOT_FOUND);
 	}

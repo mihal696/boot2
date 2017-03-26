@@ -20,7 +20,7 @@ public interface AddressService extends Serializable {
 
 	List<Address> findByStreetStartingWith(String street);
 
-	List<Address> findByStreetNotLike(String street);
+	List<Address> findByStreetContaining(String street);
 
 	Page<Address> findAll(Pageable pageable);
 
