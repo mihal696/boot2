@@ -19,6 +19,12 @@ public interface AddressRepository extends CrudRepository<Address, Long>{
 	
 	List<Address> findFirst10ByStreet(String street);
 	
+	List<Address> findByNumberGreaterThan(String number);
+	
+	List<Address> findByStreetStartingWith(String street);
+	
+	List<Address> findByStreetNotLike(String street);
+	
 	@SuppressWarnings("unchecked")
 	Address save(Address address);
 

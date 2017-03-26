@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Entity
 @Data
 @NoArgsConstructor
@@ -29,11 +28,10 @@ public class Address implements Serializable {
 
 	@Column(nullable = false)
 	private String number;
-	
-	public Address(String street, String number){
+
+	public Address(String street, String number) {
 		this.street = street;
 		this.number = number;
-	
 
-}
+	}
 }

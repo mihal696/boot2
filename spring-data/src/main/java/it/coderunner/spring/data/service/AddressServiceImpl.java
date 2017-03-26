@@ -12,17 +12,15 @@ import it.coderunner.spring.data.dao.AddressRepository;
 import it.coderunner.spring.data.model.Address;
 
 @Service
-public class AddressServiceImpl implements AddressService{
+public class AddressServiceImpl implements AddressService {
 
-	
-	
 	private static final long serialVersionUID = 4869311632471504461L;
 	@Resource
 	private AddressRepository addressRepository;
 
 	@Override
 	public Address findByStreetAndNumberAllIgnoringCase(String street, String number) {
-		return addressRepository.findByStreetAndNumberAllIgnoringCase(street, number) ;
+		return addressRepository.findByStreetAndNumberAllIgnoringCase(street, number);
 	}
 
 	@Override
@@ -38,6 +36,21 @@ public class AddressServiceImpl implements AddressService{
 	@Override
 	public Page<Address> findAll(Pageable pageable) {
 		return addressRepository.findAll(pageable);
+	}
+
+	@Override
+	public List<Address> findByNumberGreaterThan(String number) {
+		return addressRepository.findByNumberGreaterThan(number);
+	}
+
+	@Override
+	public List<Address> findByStreetStartingWith(String street) {
+		return addressRepository.findByStreetStartingWith(street);
+	}
+
+	@Override
+	public List<Address> findByStreetNotLike(String street) {
+		return addressRepository.findByStreetNotLike(street);
 	}
 
 }

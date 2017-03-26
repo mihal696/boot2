@@ -45,9 +45,32 @@ public class AddressController {
 				: new ResponseEntity<String>("No address found", HttpStatus.NOT_FOUND);
 	}
 
+	@GetMapping("/get/greaternumber/{number}")
+	public @ResponseBody ResponseEntity<String> getGreaterNumber(@PathVariable String number) {
+		List<Address> addresses = addressService.findByNumberGreaterThan(number);
+		addresses.stream().forEach(System.out::println);
+		return addresses != null && !addresses.isEmpty()
+				? new ResponseEntity<String>("GET Response : " + addresses, HttpStatus.OK)
+				: new ResponseEntity<String>("No address found", HttpStatus.NOT_FOUND);
+	}
+
 	@GetMapping("/get/alladdress/{page2}/{size2}")
 	public @ResponseBody Page<Address> getTop10(@PathVariable Integer page2, @PathVariable Integer size2) {
 		return addressService.findAll(new PageRequest(page2, size2));
+	}
+
+	@GetMapping("/get/streetstartingwith/{street}")
+	public @ResponseBody ResponseEntity<String> getByStreetStartingWith(@PathVariable String street) {
+		List<Address> address = addressService.findByStreetStartingWith(street);
+		return address != null ? new ResponseEntity<String>("GET Response : " + address, HttpStatus.OK)
+				: new ResponseEntity<String>("No street found", HttpStatus.NOT_FOUND);
+	}
+
+	@GetMapping("/get/streetnotlike/{street}")
+	public @ResponseBody ResponseEntity<String> getByStreetNotLike(@PathVariable String street) {
+		List<Address> address = addressService.findByStreetNotLike(street);
+		return address != null ? new ResponseEntity<String>("GET Response : " + address, HttpStatus.OK)
+				: new ResponseEntity<String>("No street found", HttpStatus.NOT_FOUND);
 	}
 
 }
