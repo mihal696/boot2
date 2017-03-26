@@ -72,5 +72,10 @@ public class AddressController {
 		return address != null ? new ResponseEntity<String>("GET Response : " + address, HttpStatus.OK)
 				: new ResponseEntity<String>("No street found", HttpStatus.NOT_FOUND);
 	}
-
+	@GetMapping("/get/getall/")
+	public @ResponseBody ResponseEntity<String> getAll() {
+		List<Address> address = addressService.findAll();
+		return address != null ? new ResponseEntity<String>("GET Response : " + address, HttpStatus.OK)
+				: new ResponseEntity<String>("No street found", HttpStatus.NOT_FOUND);
+	}
 }

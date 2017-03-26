@@ -2,6 +2,7 @@ package it.coderunner.spring.data.model;
 
 import java.io.Serializable;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,4 +35,5 @@ public class Address implements Serializable {
 		this.number = number;
 
 	}
+
 }

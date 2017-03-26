@@ -25,6 +25,8 @@ public interface AddressRepository extends CrudRepository<Address, Long>{
 	
 	List<Address> findByStreetContaining(String street);
 	
+	List<Address> findAll();
+	
 	@SuppressWarnings("unchecked")
 	Address save(Address address);
 

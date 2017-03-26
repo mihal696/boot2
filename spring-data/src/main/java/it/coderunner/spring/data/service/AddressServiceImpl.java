@@ -52,5 +52,9 @@ public class AddressServiceImpl implements AddressService {
 	public List<Address> findByStreetContaining(String street) {
 		return addressRepository.findByStreetContaining(street);
 	}
+	@Override
+	public List<Address> findAll() {
+		return addressRepository.findAll();
+	}
 
 }

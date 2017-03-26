@@ -21,6 +21,8 @@ public interface AddressService extends Serializable {
 	List<Address> findByStreetStartingWith(String street);
 
 	List<Address> findByStreetContaining(String street);
+	
+	List<Address> findAll();
 
 	Page<Address> findAll(Pageable pageable);
 
