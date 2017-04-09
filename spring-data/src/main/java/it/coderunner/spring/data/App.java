@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories("it.coderunner")
-public class App {
+public class App { 
 	
 	private static final String PROPERTY_NAME_DATABASE_DRIVER = "org.h2.Driver";
     private static final String PROPERTY_NAME_DATABASE_URL = "jdbc:h2:~/wwsis";
